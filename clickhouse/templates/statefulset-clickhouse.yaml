@@ -47,7 +47,7 @@ spec:
         - -c
         - |
           mkdir -p /etc/clickhouse-server/metrica.d
-      - name: restoreFromS3
+      - name: restoreinit
         image: yandex/clickhouse-server:19.14
         imagePullPolicy: IfNotPresent
         env:
