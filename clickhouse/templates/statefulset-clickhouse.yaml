@@ -52,7 +52,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: CLICKHOUSE_HOST
-          value: clickhouse-rwj4sm
+          value: '127.0.0.1'
         - name: CLICKHOUSE_DATA_PATH
           value: /var/lib/clickhouse/
         - name: CLICKHOUSE_PORT
