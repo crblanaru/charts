@@ -53,6 +53,8 @@ spec:
         env:
         - name: CLICKHOUSE_HOST
           value: clickhouse-rwj4sm
+        - name: CLICKHOUSE_DATA_PATH
+          value: /var/lib/clickhouse/
         - name: CLICKHOUSE_PORT
           value: '9000'
         - name: BACKUP_USER
