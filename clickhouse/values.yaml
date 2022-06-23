@@ -25,6 +25,7 @@ clusterDomain: "cluster.local"
 
 S3_ACCESS_KEY: "none"
 S3_SECRET_KEY: "none"
+BACKUP_NAME_CUST: "mybackup3"
 
 clickhouse:
   ## StatefulSet controller supports relax its ordering guarantees while preserving its uniqueness and identity guarantees. There are two valid pod management policies: OrderedReady and Parallel
