@@ -117,11 +117,13 @@ spec:
           value: 'true'
         - name: S3_DEBUG
           value: 'false'
+        - name: BACKUP_NAME_CUST
+          value: {{ .Values.BACKUP_NAME_CUST }}
         args:
         - /bin/sh
         - -c
         - |
-          sleep 30; BACKUP_NAME="mybackup3"; /usr/bin/wget https://github.com/AlexAkulov/clickhouse-backup/releases/download/v0.6.3/clickhouse-backup.tar.gz --no-check-certificate; /bin/tar -xf clickhouse-backup.tar.gz; cd clickhouse-backup/ ; mkdir -p /var/lib/clickhouse/shadow; ./clickhouse-backup download $BACKUP_NAME; ./clickhouse-backup restore $BACKUP_NAME; sleep 10000; 
+          sleep 30; /usr/bin/wget https://github.com/AlexAkulov/clickhouse-backup/releases/download/v0.6.3/clickhouse-backup.tar.gz --no-check-certificate; /bin/tar -xf clickhouse-backup.tar.gz; cd clickhouse-backup/ ; mkdir -p /var/lib/clickhouse/shadow; ./clickhouse-backup download $BACKUP_NAME_CUST; ./clickhouse-backup restore $BACKUP_NAME_CUST; sleep 10000; 
         volumeMounts:
         - name: {{ include "clickhouse.fullname" . }}-data
           mountPath: {{ include "clickhouse.fullpath" . }}
