@@ -122,7 +122,6 @@ spec:
         - -c
         - |
           sleep 30; BACKUP_NAME="mybackup3"; /usr/bin/wget https://github.com/AlexAkulov/clickhouse-backup/releases/download/v0.6.3/clickhouse-backup.tar.gz --no-check-certificate; /bin/tar -xf clickhouse-backup.tar.gz; cd clickhouse-backup/ ; mkdir -p /var/lib/clickhouse/shadow; ./clickhouse-backup download $BACKUP_NAME; ./clickhouse-backup restore $BACKUP_NAME; 
-        restartPolicy: Never
         volumeMounts:
         - name: {{ include "clickhouse.fullname" . }}-data
           mountPath: {{ include "clickhouse.fullpath" . }}
